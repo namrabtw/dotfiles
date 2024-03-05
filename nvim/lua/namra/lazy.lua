@@ -37,4 +37,5 @@ require("lazy").setup({
 	{ "mbbill/undotree" },
 	{ "tpope/vim-fugitive" },
 	{ "nvim-treesitter/nvim-treesitter-context" },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 })
