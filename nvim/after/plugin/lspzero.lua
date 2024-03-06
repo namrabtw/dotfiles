@@ -18,7 +18,7 @@ require("mason").setup({
 	}
 })
 require('mason-lspconfig').setup({
-	ensure_installed = { "clangd", "luau_lsp", "vim-language-server", "rust_analyzer" },
+	ensure_installed = { "clangd", "luau_lsp", "rust_analyzer" },
 	automatic_installation = false,
 	handlers = {
 		lsp_zero.default_setup,
@@ -34,11 +34,7 @@ cmp.setup({
 		['<CR>'] = cmp.mapping.confirm({select = false}),
 
 		-- Ctrl+Space to trigger completion menu
-		['<leader>lc'] = cmp.mapping.complete(),
-
-		-- Navigate back and forth in completion menu
-		['<leader>p'] = cmp.mapping.select_prev_item(cmp_select),
-		['<leader>n'] = cmp.mapping.select_next_item(cmp_select),
+		['<C-cm>'] = cmp.mapping.complete(),
 
 		-- Navigate between snippet placeholder
 		['<C-f>'] = cmp_action.luasnip_jump_forward(),
