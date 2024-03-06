@@ -15,6 +15,7 @@ require("lazy").setup({
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "mbbill/undotree" },
 	{ "tpope/vim-fugitive" },
+	{ "42Paris/42header" },
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{
 		"folke/trouble.nvim",
