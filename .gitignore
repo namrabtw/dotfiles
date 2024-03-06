@@ -1,7 +1,7 @@
 .DS_Store
 
-AppSupport
+iterm2/AppSupport
 
-lazy-lock.json
+nvim/lazy-lock.json
 
 tmux/plugins

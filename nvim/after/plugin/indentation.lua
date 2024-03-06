@@ -1,10 +1,15 @@
-require("ibl").setup {
+-- Import the required module
+local ibl = require('ibl')
+
+-- Set up the configuration
+ibl.setup({
+	indent = {
+		char = "▏",
+	},
 	scope = {
-		exclude = {
-			node_type = {
-				["*"] = { "if_statement", "comment", "function_definition", "variable_declaration", "preprocessor" }
-			}
-		}
+		char = "▏",
+		show_start = false,
+		show_end = false
 	}
-}
+})
 
