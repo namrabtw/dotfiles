@@ -39,11 +39,12 @@ local config = {
     options = {
         component_separators = '',
         section_separators = '',
-        theme = {
-            normal = { a = { fg = colors.text, bg = colors.base }},
-            inactive = { a = { fg = colors.text, bg = colors.base } },
-        },
-    },
+	theme = {
+		normal = { a = { fg = colors.text, bg = colors.none }},
+		inactive = { a = { fg = colors.text, bg = colors.none } },
+	},
+	component_background = 'NONE',
+},
     sections = {
         lualine_a = {}, -- Remove defaults
         lualine_b = {},
@@ -103,7 +104,7 @@ insert_left_component {
         local icon, iconhl = get_file_icon()
         return '%#' .. iconhl .. '#' .. icon .. ' ' .. vim.fn.expand('%:t') .. '%*'
     end,
-    padding = { right = 2 },
+    padding = { right = 0 },
 }
 
 -- Branch component with fixed color
@@ -111,7 +112,7 @@ insert_left_component {
 	"branch",
 	icon = "󰊢",
 	color = { fg = colors.gold }, -- Set branch color to rose
-	padding = { right = 0 }
+	padding = { left = 2, right = 0 }
 }
 
 insert_left_component {
@@ -119,13 +120,11 @@ insert_left_component {
 	-- Is it me or the symbol for modified us really weird
 	symbols = { added = ' ', modified = ' ', removed = ' ' },
 	diff_color = {
-		added = { fg = colors.pine },
+		added = { fg = colors.foam },
 		modified = { fg = colors.iris },
 		removed = { fg = colors.love },
 	},
 	cond = conditions.hide_in_width,
 }
 
--- Now don't forget to initialize lualine
 lualine.setup(config)
-
