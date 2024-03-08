@@ -15,6 +15,7 @@ require("lazy").setup({
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "mbbill/undotree" },
 	{ "tpope/vim-fugitive" },
+	{ "nvim-treesitter/nvim-treesitter" },
 	{ "42Paris/42header" },
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{
@@ -26,7 +27,10 @@ require("lazy").setup({
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
-	{ "nvim-treesitter/nvim-treesitter" },
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	},
 	{
 		"ThePrimeagen/refactoring.nvim",
 		dependencies = {
