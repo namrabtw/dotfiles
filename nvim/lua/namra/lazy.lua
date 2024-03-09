@@ -12,11 +12,27 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	spec = {
+		{ import = "plugins" },
+	},
+	checker = {
+		enabled = true, -- automatically check for plugin updates
+		notify = false, -- get a notification when new updates are found
+	},
+
+	-- ui config
+	ui = {
+		border = "rounded",
+		size = {
+			width = 0.85,
+			height = 0.85,
+		},
+	},
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "mbbill/undotree" },
-	{ "tpope/vim-fugitive" },
+	{ "tpope/vim-fugitive" }, -- not lazy
 	{ "nvim-treesitter/nvim-treesitter" },
-	{ "42Paris/42header" },
+	{ "42Paris/42header", name = "42header" },
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{
 		"folke/trouble.nvim",
