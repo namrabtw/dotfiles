@@ -205,5 +205,4 @@ insert_right_component {
 	padding = { left = 0, right = 0 }
 }
 
-
 lualine.setup(config)
