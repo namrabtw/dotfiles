@@ -156,7 +156,7 @@ insert_left_component {
 insert_left_component {
 	'diagnostics',
 	sources = { 'nvim_diagnostic' },
-	symbols = { error = ' ', warn = ' ', info = '󰌵 ' },
+	symbols = { error = ' ', warn = ' ', hint = '⚑ ', info = '󰌵 ' },
 	diagnostics_color = {
 		color_error = { fg = colors.love },
 		color_warn = { fg = colors.gold },
