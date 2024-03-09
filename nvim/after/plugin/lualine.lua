@@ -55,15 +55,21 @@ local config = {
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_y = {},
-		lualine_z = {},
 		lualine_c = {},
 		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
 	},
 }
 
+-- Inserts a component in lualine_a at left section
 local function insert_left_component(component)
 	table.insert(config.sections.lualine_a, component)
+end
+
+-- Inserts a component in lualine_z at right section
+local function insert_right_component(component)
+	table.insert(config.sections.lualine_z, component)
 end
 
 insert_left_component {
@@ -158,5 +164,46 @@ insert_left_component {
 	},
 	padding = { left = 0, right = 0 }
 }
+
+insert_right_component {
+	'progress',
+	-- Is it me or the symbol for modified us really weird
+	cond = conditions.hide_in_width,
+	padding = { left = 0, right = 0 }
+}
+
+insert_right_component {
+	function()
+		return ' 󱞇 ' -- Custom mode indicator icon
+	end,
+	color = { fg = colors.text, bg = colors.surface }, -- Set branch color to rose
+	separator = { right = ' ', left = ' ' },
+	padding = { left = 0, right = 0 }
+}
+
+insert_right_component {
+	'location',
+	-- Is it me or the symbol for modified us really weird
+	cond = conditions.hide_in_width,
+	padding = { left = 0, right = 0 }
+}
+
+insert_right_component {
+	function()
+		return '  ' -- Custom mode indicator icon
+	end,
+	color = { fg = colors.text, bg = colors.surface }, -- Set branch color to rose
+	separator = { right = ' ', left = ' ' },
+	padding = { left = 0, right = 0 }
+}
+
+insert_right_component {
+	function()
+		return ' ' -- Custom mode indicator icon
+	end,
+	color = { fg = colors.base, bg = colors.base }, -- Set branch color to rose
+	padding = { left = 0, right = 0 }
+}
+
 
 lualine.setup(config)
