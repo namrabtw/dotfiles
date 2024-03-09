@@ -68,7 +68,15 @@ end
 
 insert_left_component {
 	function()
-		return '' -- Custom mode indicator icon
+		return ' ' -- Custom mode indicator icon
+	end,
+	color = { fg = colors.base, bg = colors.base }, -- Set branch color to rose
+	padding = { left = 0, right = 0 }
+}
+
+insert_left_component {
+	function()
+		return '  ' -- Custom mode indicator icon
 	end,
 	color = function()
 		-- Auto change color according to Neovim's mode
@@ -92,9 +100,10 @@ insert_left_component {
 			['!'] = colors.love,
 			t = colors.love,
 		}
-		return { fg = mode_color[vim.fn.mode()] }
+		return { fg = mode_color[vim.fn.mode()], bg = colors.surface }
 	end,
-	padding = { left = 1, right = 3 },
+	padding = { left = 0, right = 0 },
+	separator = { right = ' ', left = '' },
 }
 
 -- File icon and name component with color
@@ -103,15 +112,16 @@ insert_left_component {
 		local icon, iconhl = get_file_icon()
 		return '%#' .. iconhl .. '#' .. icon .. ' ' .. vim.fn.expand('%:t') .. '%*'
 	end,
-	padding = { right = 0 },
+	padding = { left = 0, right = 0 }
 }
 
 -- Branch component with fixed color
 insert_left_component {
 	"branch",
 	icon = "󰊢",
-	color = { fg = colors.gold }, -- Set branch color to rose
-	padding = { left = 2, right = 0 }
+	color = { fg = colors.gold, bg = colors.surface }, -- Set branch color to rose
+	separator = { right = ' ', left = ' ' },
+	padding = { left = 0, right = 0 }, -- Adjust the right padding to 1
 }
 
 insert_left_component {
@@ -123,7 +133,30 @@ insert_left_component {
 		modified = { fg = colors.iris },
 		removed = { fg = colors.love },
 	},
+	color = { bg = colors.surface }, -- Set branch color to rose
 	cond = conditions.hide_in_width,
+	separator = { right = ' ', left = ' ' },
+	padding = { left = 1, right = 0 }
+}
+
+insert_left_component {
+	function()
+		return ' ' -- Custom mode indicator icon
+	end,
+	color = { fg = colors.base, bg = colors.base }, -- Set branch color to rose
+	padding = { left = 0, right = 0 }
+}
+
+insert_left_component {
+	'diagnostics',
+	sources = { 'nvim_diagnostic' },
+	symbols = { error = ' ', warn = ' ', info = '󰌵 ' },
+	diagnostics_color = {
+		color_error = { fg = colors.love },
+		color_warn = { fg = colors.gold },
+		color_info = { fg = colors.foam },
+	},
+	padding = { left = 0, right = 0 }
 }
 
 lualine.setup(config)
