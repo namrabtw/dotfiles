@@ -33,6 +33,7 @@ require("lazy").setup({
 	{ "tpope/vim-fugitive" },
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "42Paris/42header" },
+	{ "numToStr/Comment.nvim" },
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{
 		"folke/trouble.nvim",
