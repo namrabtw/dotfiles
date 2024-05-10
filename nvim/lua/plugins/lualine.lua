@@ -144,9 +144,9 @@ return {
 					modified = { fg = colors.iris },
 					removed = { fg = colors.love },
 				},
-				color = { bg = colors.base }, -- Set branch color to rose
+				color = { bg = colors.surface }, -- Set branch color to rose
 				cond = conditions.hide_in_width,
-				separator = { right = ' ', left = ' ' },
+				separator = { right = ' ', left = '' },
 				padding = { left = 1, right = 0 }
 			}
 
