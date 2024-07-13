@@ -92,7 +92,7 @@ return {
 				color = function()
 					-- Auto change color according to Neovim's mode
 					local mode_color = {
-						n = colors.base;
+						n = colors.surface;
 						i = colors.pine;
 						v = colors.iris;
 						V = colors.iris;
@@ -130,7 +130,7 @@ return {
 			insert_left_component {
 				"branch",
 				icon = "󰊢",
-				color = { fg = colors.gold, bg = colors.base }, -- Set branch color to rose
+				color = { fg = colors.gold, bg = colors.surface }, -- Set branch color to rose
 				separator = { right = ' ', left = ' ' },
 				padding = { left = 0, right = 0 }, -- Adjust the right padding to 1
 			}
@@ -144,7 +144,7 @@ return {
 					modified = { fg = colors.iris },
 					removed = { fg = colors.love },
 				},
-				color = { bg = colors.surface }, -- Set branch color to rose
+				color = { bg = colors.overlay }, -- Set branch color to rose
 				cond = conditions.hide_in_width,
 				separator = { right = ' ', left = '' },
 				padding = { left = 1, right = 0 }
@@ -181,7 +181,7 @@ return {
 				function()
 					return ' 󱞇 ' -- Custom mode indicator icon
 				end,
-				color = { fg = colors.text, bg = colors.base }, -- Set branch color to rose
+				color = { fg = colors.text, bg = colors.surface }, -- Set branch color to rose
 				separator = { right = ' ', left = ' ' },
 				padding = { left = 0, right = 0 }
 			}
@@ -197,7 +197,7 @@ return {
 				function()
 					return '  ' -- Custom mode indicator icon
 				end,
-				color = { fg = colors.text, bg = colors.base }, -- Set branch color to rose
+				color = { fg = colors.text, bg = colors.surface }, -- Set branch color to rose
 				separator = { right = ' ', left = ' ' },
 				padding = { left = 0, right = 0 }
 			}
