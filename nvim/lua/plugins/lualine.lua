@@ -81,7 +81,7 @@ return {
 				function()
 					return ' '
 				end,
-				color = { fg = colors.none, bg = colors.none }, -- Set branch color to rose
+				color = { fg = colors.none, bg = colors.none },
 				padding = { left = 0, right = 0 }
 			}
 
@@ -89,30 +89,31 @@ return {
 				function()
 					return '  ' -- Custom mode indicator icon
 				end,
-				color = function()
-					-- Auto change color according to Neovim's mode
-					local mode_color = {
-						n = colors.surface;
-						i = colors.pine;
-						v = colors.iris;
-						V = colors.iris;
-						c = colors.love;
-						no = colors.rose,
-						s = colors.rose,
-						S = colors.rose,
-						ic = colors.gold,
-						R = colors.iris,
-						Rv = colors.iris,
-						cv = colors.love,
-						ce = colors.love,
-						r = colors.foam,
-						rm = colors.foam,
-						['r?'] = colors.foam,
-						['!'] = colors.love,
-						t = colors.love,
-					}
-					return { fg = colors.text, bg = mode_color[vim.fn.mode()] }
-				end,
+				-- color = function()
+				-- 	-- Auto change color according to Neovim's mode
+				-- 	local mode_color = {
+				-- 		n = colors.surface;
+				-- 		i = colors.pine;
+				-- 		v = colors.iris;
+				-- 		V = colors.iris;
+				-- 		c = colors.love;
+				-- 		no = colors.rose,
+				-- 		s = colors.rose,
+				-- 		S = colors.rose,
+				-- 		ic = colors.gold,
+				-- 		R = colors.iris,
+				-- 		Rv = colors.iris,
+				-- 		cv = colors.love,
+				-- 		ce = colors.love,
+				-- 		r = colors.foam,
+				-- 		rm = colors.foam,
+				-- 		['r?'] = colors.foam,
+				-- 		['!'] = colors.love,
+				-- 		t = colors.love,
+				-- 	}
+				-- 	return { fg = colors.text, bg = mode_color[vim.fn.mode()] }
+				-- end,
+				color = { fg = colors.text, bg = colors.surface },
 				padding = { left = 0, right = 0 },
 				separator = { right = ' ', left = ' ' },
 			}
@@ -121,7 +122,7 @@ return {
 			insert_left_component {
 				function()
 					local icon, iconhl = get_file_icon()
-					return '%#' .. iconhl .. '#' .. icon .. ' ' .. vim.fn.expand('%:t') .. '%*'
+					return '%#' .. iconhl .. '#' .. icon .. ' ' .. vim.fn.expand('%:t') .. '%*'
 				end,
 				padding = { left = 0, right = 0 }
 			}
@@ -130,21 +131,20 @@ return {
 			insert_left_component {
 				"branch",
 				icon = "󰊢",
-				color = { fg = colors.gold, bg = colors.surface }, -- Set branch color to rose
+				color = { fg = colors.gold, bg = colors.surface }, -- Set branch color to gold
 				separator = { right = '', left = ' ' },
-				padding = { left = 0, right = 0 }, -- Adjust the right padding to 1
+				padding = { left = 0, right = 0 },
 			}
 
 			insert_left_component {
 				'diff',
-				-- Is it me or the symbol for modified us really weird
 				symbols = { added = ' ', modified = ' ', removed = ' ' },
 				diff_color = {
 					added = { fg = colors.foam },
 					modified = { fg = colors.iris },
 					removed = { fg = colors.love },
 				},
-				color = { bg = colors.overlay }, -- Set branch color to rose
+				color = { bg = colors.overlay },
 				cond = conditions.hide_in_width,
 				separator = { right = ' ', left = '' },
 				padding = { left = 1, right = 0 }
@@ -152,9 +152,9 @@ return {
 
 			insert_left_component {
 				function()
-					return ' ' -- Custom mode indicator icon
+					return ' '
 				end,
-				color = { fg = colors.none, bg = colors.none }, -- Set branch color to rose
+				color = { fg = colors.none, bg = colors.none },
 				padding = { left = 0, right = 0 }
 			}
 
@@ -172,41 +172,39 @@ return {
 
 			insert_right_component {
 				'progress',
-				-- Is it me or the symbol for modified us really weird
 				cond = conditions.hide_in_width,
 				padding = { left = 0, right = 0 }
 			}
 
 			insert_right_component {
 				function()
-					return ' 󱞇 ' -- Custom mode indicator icon
+					return ' 󱞇 ' -- Custom progress indicator icon
 				end,
-				color = { fg = colors.text, bg = colors.surface }, -- Set branch color to rose
+				color = { fg = colors.text, bg = colors.surface },
 				separator = { right = ' ', left = ' ' },
 				padding = { left = 0, right = 0 }
 			}
 
 			insert_right_component {
 				'location',
-				-- Is it me or the symbol for modified us really weird
 				cond = conditions.hide_in_width,
 				padding = { left = 0, right = 0 }
 			}
 
 			insert_right_component {
 				function()
-					return '  ' -- Custom mode indicator icon
+					return '  ' -- Custom location indicator icon
 				end,
-				color = { fg = colors.text, bg = colors.surface }, -- Set branch color to rose
+				color = { fg = colors.text, bg = colors.surface },
 				separator = { right = ' ', left = ' ' },
 				padding = { left = 0, right = 0 }
 			}
 
 			insert_right_component {
 				function()
-					return ' ' -- Custom mode indicator icon
+					return ' '
 				end,
-				color = { fg = colors.none, bg = colors.none }, -- Set branch color to rose
+				color = { fg = colors.none, bg = colors.none },
 				padding = { left = 0, right = 0 }
 			}
 
