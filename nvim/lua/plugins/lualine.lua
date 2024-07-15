@@ -131,7 +131,7 @@ return {
 				"branch",
 				icon = "󰊢",
 				color = { fg = colors.gold, bg = colors.surface }, -- Set branch color to rose
-				separator = { right = ' ', left = ' ' },
+				separator = { right = '', left = ' ' },
 				padding = { left = 0, right = 0 }, -- Adjust the right padding to 1
 			}
 
